@@ -5,10 +5,15 @@ pipeline {
 	}
 
 	stages {
-		stage('Package') {
+		stage('Compilacion') {
 			steps {
-				bat 'mvn -B -q clean package'
+				bat 'mvn -B -q -pl war-example-updated clean compile'
 			}
 		}
-  }
+		stage('Package') {
+			steps {
+				bat 'mvn -B -q package'
+			}
+		}
+	}
 }
