@@ -7,12 +7,12 @@ pipeline {
 	stages {
 		stage('Compilacion') {
 			steps {
-				bat 'mvn -B -q -pl war-example-updated clean compile'
+				bat 'mvn -pl war-example-updated clean compile'
 			}
 		}
 		stage('Package') {
 			steps {
-				bat 'mvn -B -q package'
+				bat 'mvn package'
 			}
 		}
 	}
